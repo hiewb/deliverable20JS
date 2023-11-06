@@ -9,12 +9,10 @@ window.addEventListener("load", function() {
     video.autoplay = false;
     video.loop = false;
 
-    document.getElementById("volume").innerHTML = video.volume * 100 + "%";
-
     // Play Button
     document.querySelector("#play").addEventListener("click", function() {
         video.play();
-        updateVolumeInfo();
+        document.getElementById("volume").innerHTML = video.volume * 100 + "%";
     });
 
     // Pause Button
@@ -71,8 +69,4 @@ window.addEventListener("load", function() {
         video.classList.remove("oldSchool");
     });
 
-    // Function to update volume information
-    function updateVolumeInfo() {
-        document.querySelector("#volume").textContent = (video.volume * 100).toFixed(0) + "%";
-    }
 });
